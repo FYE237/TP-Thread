@@ -10,7 +10,7 @@
  #include <pthread.h>
 
 //fye
-extern  pthread_mutex_t lock;
+extern  pthread_mutex_t lock,lock3;
 extern pthread_t thread_decodeur;
 
 bool fini = false;
@@ -161,8 +161,9 @@ int decodeAllHeaders(int respac, struct streamstate *s, enum streamtype type) {
 		// lancement du thread gérant l'affichage (draw2SDL)
 	        // inserer votre code ici !!
 			//fye
+			pthread_mutex_unlock(&lock3);
 			pthread_create(&thread_decodeur,NULL,draw2SDL,&(s->serial));
-
+			pthread_mutex_unlock(&lock3);
 
 		assert(res == 0);		     
 	    }

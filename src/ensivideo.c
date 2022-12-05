@@ -18,8 +18,9 @@
    pthread_t thread_decodeur;
 
 
-  pthread_mutex_t lock;
+  pthread_mutex_t lock, lock2, lock3;
 
+int  nombre_texture = 1 ;
 
 int main(int argc, char *argv[]) {
     int res;
@@ -59,8 +60,8 @@ int main(int argc, char *argv[]) {
     sleep(1);
 
     // tuer les deux threads videos si ils sont bloqués
-    pthread_cancel(thread_video);
-    pthread_cancel(thread_decodeur);
+    // pthread_cancel(thread_video);
+    // pthread_cancel(thread_decodeur);
 
     // attendre les 2 threads videos
     pthread_join(thread_video,NULL);

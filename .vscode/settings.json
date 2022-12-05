@@ -2,6 +2,8 @@
     "files.associations": {
         "unistd.h": "c",
         "pthread.h": "c",
-        "stream_common.h": "c"
+        "stream_common.h": "c",
+        "cstdio": "cpp",
+        "type_traits": "cpp"
     }
 }

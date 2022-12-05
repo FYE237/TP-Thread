@@ -77,8 +77,8 @@ void *draw2SDL(void *arg) {
 	//fye
 	pthread_mutex_unlock(&lock);
 
-
-    assert(s->strtype == TYPE_THEORA);
+	//fye!!!!
+    //assert(s->strtype == TYPE_THEORA);
     
     while(! fini) {
 	// récupérer les évenements de fin
